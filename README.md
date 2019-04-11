@@ -1,2 +1,2 @@
-# setup-vim
-My VIM Setup Instructions
+# Setup - VIM
+## My VIM Setup Instructions
