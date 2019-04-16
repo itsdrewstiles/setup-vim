@@ -11,6 +11,7 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 set number
+set scrolloff=5
 set expandtab ts=2 sw=2 ai
 set colorcolumn=80
 
@@ -33,15 +34,13 @@ let g:NERDTreeAutoDeleteBuffer = 1
 let g:NERDTreeMinimalUI = 1
 let g:NERDTreeDirArrows = 1
 let g:NERDTreeShowHidden = 1
-let g:NERDTreeWinSize = 36
-let g:NERDTreeWinPos = "left"
+let g:NERDTreeCascadeSingleChildDir = 0
 let g:NERDTreeIgnore = [
   \ 'node_modules',
   \ 'vendor',
   \ '.git',
   \ '.github',
   \ '.cache',
-  \ '.cache-loader',
   \ '.DS_STORE'
   \ ]
 let g:NERDTreeIndicatorMapCustom = {

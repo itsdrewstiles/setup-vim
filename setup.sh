@@ -22,6 +22,8 @@ dl_bundle "es.next.syntax.vim" \
   "https://github.com/othree/es.next.syntax.vim.git"
 dl_bundle "delimitMate" \
   "https://github.com/Raimondi/delimitMate.git"
+dl_bundle "Dockerfile.vim" \
+  "https://github.com/ekalinin/Dockerfile.vim.git"
 dl_bundle "nerdtree" \
   "https://github.com/scrooloose/nerdtree.git"
 dl_bundle "nerdtree-git-plugin" \
