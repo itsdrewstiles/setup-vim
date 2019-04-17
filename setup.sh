@@ -18,8 +18,6 @@ mkdir -p "$HOME/.vim/autoload" "$HOME/.vim/bundle"
 curl -LSso "$HOME/.vim/autoload/pathogen.vim" "https://tpo.pe/pathogen.vim"
 
 # Install plugins
-dl_bundle "es.next.syntax.vim" \
-  "https://github.com/othree/es.next.syntax.vim.git"
 dl_bundle "delimitMate" \
   "https://github.com/Raimondi/delimitMate.git"
 dl_bundle "Dockerfile.vim" \
@@ -30,6 +28,8 @@ dl_bundle "nerdtree-git-plugin" \
   "https://github.com/Xuyuanp/nerdtree-git-plugin.git"
 dl_bundle "syntastic" \
   "https://github.com/vim-syntastic/syntastic.git"
+dl_bundle "typescript-vim"
+  "https://github.com/leafgarland/typescript-vim.git"
 dl_bundle "vim-acpi-asl" \
   "https://github.com/martinlroth/vim-acpi-asl.git"
 dl_bundle "vim-airline" \
@@ -40,10 +40,10 @@ dl_bundle "vim-editorconfig" \
   "https://github.com/sgur/vim-editorconfig.git"
 dl_bundle "vim-gitgutter" \
   "https://github.com/airblade/vim-gitgutter.git"
+dl_bundle "vim-javascript"
+  "https://github.com/pangloss/vim-javascript.git"
 dl_bundle "vim-markdown" \
   "https://github.com/plasticboy/vim-markdown.git"
-dl_bundle "yajs.vim" \
-  "https://github.com/othree/yajs.vim.git"
 
 # Download the latest .vimrc
 curl -LSso "$HOME/.vimrc" \
