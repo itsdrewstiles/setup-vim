@@ -36,6 +36,8 @@ dl_bundle "vim-airline" \
   "https://github.com/vim-airline/vim-airline.git"
 dl_bundle "vim-better-whitespace" \
   "https://github.com/ntpeters/vim-better-whitespace.git"
+dl_bundle "vim-colorschemes" \
+  "https://github.com/flazz/vim-colorschemes.git"
 dl_bundle "vim-editorconfig" \
   "https://github.com/sgur/vim-editorconfig.git"
 dl_bundle "vim-gitgutter" \

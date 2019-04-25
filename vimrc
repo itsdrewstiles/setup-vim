@@ -18,6 +18,8 @@ set colorcolumn=80
 syntax on
 filetype plugin indent on
 
+colorscheme dawn
+
 " insertmode by default
 "au BufRead,BufNewFile * start
 
