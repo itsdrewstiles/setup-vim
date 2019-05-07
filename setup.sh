@@ -10,7 +10,13 @@ type vim >/dev/null 2>&1 \
     }
 
 dl_bundle() {
-    git clone --depth=1 "$2" "$HOME/.vim/bundle/$1"
+    if [[ -d "$HOME/.vim/bundle/$1" ]]; then
+        pushd "$HOME/.vim/bundle/$1"
+        git pull
+        popd
+    else
+        git clone --depth=1 "$2" "$HOME/.vim/bundle/$1"
+    fi
 }
 
 # Install vim-pathogen
