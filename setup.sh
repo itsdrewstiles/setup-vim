@@ -5,7 +5,7 @@ type nvim >/dev/null 2>&1 \
     && type curl >/dev/null 2>&1 \
     && type git >/dev/null 2>&1 \
     || {
-        echo >&2 "You need to install: vim, curl, git.";
+        echo >&2 "You need to install: neovim, curl, git.";
         exit 1;
     }
 
