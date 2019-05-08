@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-# Check whether vim is installed or not
-type vim >/dev/null 2>&1 \
+# Check whether neovim is installed or not
+type nvim >/dev/null 2>&1 \
     && type curl >/dev/null 2>&1 \
     && type git >/dev/null 2>&1 \
     || {
@@ -9,7 +9,7 @@ type vim >/dev/null 2>&1 \
         exit 1;
     }
 
-dl_bundle() {
+function dl_bundle() {
     if [[ -d "$HOME/.vim/bundle/$1" ]]; then
         pushd "$HOME/.vim/bundle/$1"
         git pull
@@ -17,6 +17,15 @@ dl_bundle() {
     else
         git clone --depth=1 "$2" "$HOME/.vim/bundle/$1"
     fi
+}
+
+function link_nvim_configs() {
+    rm -rf "$1/autoload"
+    rm -rf "$1/bundle"
+    rm -f "$1/init.vim"
+    ln -sf "$HOME/.vim/autload" "$1/autoload"
+    ln -sf "$HOME/.vim/bundle" "$1/bundle"
+    ln -sf "$HOME/.vimrc" "$1/init.vim"
 }
 
 # Install vim-pathogen
@@ -28,12 +37,12 @@ dl_bundle "delimitMate" \
     "https://github.com/Raimondi/delimitMate.git"
 dl_bundle "Dockerfile.vim" \
     "https://github.com/ekalinin/Dockerfile.vim.git"
+dl_bundle "neomake" \
+    "https://github.com/neomake/neomake.git"
 dl_bundle "nerdtree" \
     "https://github.com/scrooloose/nerdtree.git"
 dl_bundle "nerdtree-git-plugin" \
     "https://github.com/Xuyuanp/nerdtree-git-plugin.git"
-dl_bundle "syntastic" \
-    "https://github.com/vim-syntastic/syntastic.git"
 dl_bundle "tsuquyomi" \
     "https://github.com/Quramy/tsuquyomi.git"
 dl_bundle "typescript-vim" \
@@ -58,3 +67,10 @@ dl_bundle "vim-markdown" \
 # Download the latest .vimrc
 curl -LSso "$HOME/.vimrc" \
     "https://raw.githubusercontent.com/itsdrewstiles/setup-vim/master/vimrc"
+
+# Link neovim configs to vim configs
+if [[ -n "${XDG_CONFIG_HOME+x}" ]]; then
+    link_nvim "$XDG_CONFIG_HOME/nvim"
+else
+    link_nvim_configs "$HOME/.config"
+fi

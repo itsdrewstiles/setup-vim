@@ -58,11 +58,10 @@ let g:NERDTreeIndicatorMapCustom = {
   \ "Unknown"   : "?"
   \ }
 
-" configure syntastic
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+" configure neomake
+call neomake#configure#automake('nrwi', 500)
+let g:neomake_serialize = 1
+let g:neomake_serialize_abort_on_error = 1
 
 " configure whitespace linter
 let g:better_whitespace_enabled = 1
