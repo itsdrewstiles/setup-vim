@@ -66,3 +66,7 @@ let g:neomake_serialize_abort_on_error = 1
 " configure whitespace linter
 let g:better_whitespace_enabled = 1
 let g:strip_whitespace_on_save = 1
+
+" configure markdown-preview
+let g:mkdp_auto_start = 0
+let g:mkdp_auto_close = 1

@@ -20,10 +20,9 @@ function dl_bundle() {
 }
 
 function link_nvim_configs() {
-    rm -rf "$1/autoload"
-    rm -rf "$1/bundle"
-    rm -f "$1/init.vim"
-    ln -sf "$HOME/.vim/autload" "$1/autoload"
+    rm -rf "$1"
+    mkdir -p "$1"
+    ln -sf "$HOME/.vim/autoload" "$1/autoload"
     ln -sf "$HOME/.vim/bundle" "$1/bundle"
     ln -sf "$HOME/.vimrc" "$1/init.vim"
 }
@@ -37,6 +36,8 @@ dl_bundle "delimitMate" \
     "https://github.com/Raimondi/delimitMate.git"
 dl_bundle "Dockerfile.vim" \
     "https://github.com/ekalinin/Dockerfile.vim.git"
+dl_bundle "markdown-preview.nvim" \
+    "https://github.com/iamcco/markdown-preview.nvim.git"
 dl_bundle "neomake" \
     "https://github.com/neomake/neomake.git"
 dl_bundle "nerdtree" \
@@ -72,5 +73,5 @@ curl -LSso "$HOME/.vimrc" \
 if [[ -n "${XDG_CONFIG_HOME+x}" ]]; then
     link_nvim "$XDG_CONFIG_HOME/nvim"
 else
-    link_nvim_configs "$HOME/.config"
+    link_nvim_configs "$HOME/.config/nvim"
 fi
