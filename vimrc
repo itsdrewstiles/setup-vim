@@ -14,6 +14,7 @@ set number
 set scrolloff=5
 set expandtab ts=2 sw=2 ai
 set colorcolumn=80
+set nofoldenable
 
 syntax on
 filetype plugin indent on
@@ -66,7 +67,3 @@ let g:neomake_serialize_abort_on_error = 1
 " configure whitespace linter
 let g:better_whitespace_enabled = 1
 let g:strip_whitespace_on_save = 1
-
-" configure markdown-preview
-let g:mkdp_auto_start = 0
-let g:mkdp_auto_close = 1
