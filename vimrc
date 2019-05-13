@@ -12,9 +12,10 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 set number
 set scrolloff=5
-set expandtab ts=2 sw=2 ai
 set colorcolumn=80
 set nofoldenable
+
+set wildignore+=node_modules,vendor,.git,.cache,.DS_STORE
 
 syntax on
 filetype plugin indent on
@@ -38,14 +39,7 @@ let g:NERDTreeMinimalUI = 1
 let g:NERDTreeDirArrows = 1
 let g:NERDTreeShowHidden = 1
 let g:NERDTreeCascadeSingleChildDir = 0
-let g:NERDTreeIgnore = [
-  \ 'node_modules',
-  \ 'vendor',
-  \ '.git',
-  \ '.github',
-  \ '.cache',
-  \ '.DS_STORE'
-  \ ]
+let g:NERDTreeRespectWildIgnore = 1
 let g:NERDTreeIndicatorMapCustom = {
   \ "Modified"  : "modified",
   \ "Staged"    : "staged",

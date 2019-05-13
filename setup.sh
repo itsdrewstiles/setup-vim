@@ -62,6 +62,8 @@ dl_bundle "vim-javascript" \
     "https://github.com/pangloss/vim-javascript.git"
 dl_bundle "vim-markdown" \
     "https://github.com/plasticboy/vim-markdown.git"
+dl_bundle "vim-wildgitignore" \
+    "https://github.com/jason0x43/vim-wildgitignore.git"
 
 # Download the latest .vimrc
 curl -LSso "$HOME/.vimrc" \
