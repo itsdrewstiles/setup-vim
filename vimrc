@@ -20,8 +20,6 @@ set wildignore+=node_modules,vendor,.git,.cache,.DS_STORE
 syntax on
 filetype plugin indent on
 
-colorscheme dawn
-
 " insertmode by default
 "au BufRead,BufNewFile * start
 
