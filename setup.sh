@@ -42,6 +42,8 @@ dl_bundle "nerdtree" \
     "https://github.com/scrooloose/nerdtree.git"
 dl_bundle "nerdtree-git-plugin" \
     "https://github.com/Xuyuanp/nerdtree-git-plugin.git"
+dl_bundle "swift.vim" \
+    "https://github.com/keith/swift.vim.git"
 dl_bundle "tsuquyomi" \
     "https://github.com/Quramy/tsuquyomi.git"
 dl_bundle "typescript-vim" \
