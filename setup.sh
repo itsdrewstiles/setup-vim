@@ -36,6 +36,8 @@ dl_bundle "delimitMate" \
     "https://github.com/Raimondi/delimitMate.git"
 dl_bundle "Dockerfile.vim" \
     "https://github.com/ekalinin/Dockerfile.vim.git"
+dl_bundle "kotlin-vim" \
+    "https://github.com/udalov/kotlin-vim"
 dl_bundle "neomake" \
     "https://github.com/neomake/neomake.git"
 dl_bundle "nerdtree" \
