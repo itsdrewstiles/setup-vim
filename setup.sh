@@ -64,6 +64,8 @@ dl_bundle "vim-gitgutter" \
     "https://github.com/airblade/vim-gitgutter.git"
 dl_bundle "vim-javascript" \
     "https://github.com/pangloss/vim-javascript.git"
+dl_bundle "vim-localvimrc" \
+    "https://github.com/embear/vim-localvimrc.git"
 dl_bundle "vim-markdown" \
     "https://github.com/plasticboy/vim-markdown.git"
 dl_bundle "vim-wildgitignore" \
