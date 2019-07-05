@@ -32,6 +32,8 @@ mkdir -p "$HOME/.vim/autoload" "$HOME/.vim/bundle"
 curl -LSso "$HOME/.vim/autoload/pathogen.vim" "https://tpo.pe/pathogen.vim"
 
 # Install plugins
+dl_bundle "deoplete.nvim" \
+    "https://github.com/Shougo/deoplete.nvim.git"
 dl_bundle "delimitMate" \
     "https://github.com/Raimondi/delimitMate.git"
 dl_bundle "Dockerfile.vim" \

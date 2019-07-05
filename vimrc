@@ -62,3 +62,9 @@ let g:strip_whitespace_on_save = 1
 
 " configure localvimrc
 let g:localvimrc_ask = 0
+
+" configure delimitMate
+let g:delimitMate_expand_cr = 1
+
+" configure deoplete
+let g:deoplete#enable_at_startup = 1
