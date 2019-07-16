@@ -4,8 +4,9 @@
 type nvim >/dev/null 2>&1 \
     && type curl >/dev/null 2>&1 \
     && type git >/dev/null 2>&1 \
+    && type pip >/dev/nell 2>&1 \
     || {
-    (>&2 echo "You need to install: neovim, curl, git.");
+    (>&2 echo "You need to install: neovim, curl, git and pip.");
         exit 1;
     }
 
@@ -26,6 +27,9 @@ function link_nvim_configs() {
     ln -sf "$HOME/.vim/bundle" "$1/bundle"
     ln -sf "$HOME/.vimrc" "$1/init.vim"
 }
+
+# Some of these bundles require if_python3
+pip install --user pynvim
 
 # Install vim-pathogen
 mkdir -p "$HOME/.vim/autoload" "$HOME/.vim/bundle"
