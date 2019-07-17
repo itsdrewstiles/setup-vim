@@ -4,7 +4,7 @@
 type nvim >/dev/null 2>&1 \
     && type curl >/dev/null 2>&1 \
     && type git >/dev/null 2>&1 \
-    && type pip >/dev/nell 2>&1 \
+    && type pip >/dev/null 2>&1 \
     || {
     (>&2 echo "You need to install: neovim, curl, git and pip.");
         exit 1;
