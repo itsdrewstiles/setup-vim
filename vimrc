@@ -52,9 +52,12 @@ let g:NERDTreeIndicatorMapCustom = {
   \ }
 
 " configure neomake
-call neomake#configure#automake('nrwi', 500)
+call neomake#configure#automake('nrwi')
 let g:neomake_serialize = 1
 let g:neomake_serialize_abort_on_error = 1
+
+autocmd InsertChange,InsertLeave,TextChanged * update
+  \ | Neomake " and also lint-as-i-type
 
 " configure whitespace linter
 let g:better_whitespace_enabled = 1
