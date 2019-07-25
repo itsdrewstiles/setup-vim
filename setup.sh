@@ -66,6 +66,8 @@ dl_bundle "vim-colorschemes" \
     "https://github.com/flazz/vim-colorschemes.git"
 dl_bundle "vim-editorconfig" \
     "https://github.com/sgur/vim-editorconfig.git"
+dl_bundle "vim-fugitive" \
+    "https://github.com/tpope/vim-fugitive.git"
 dl_bundle "vim-gitgutter" \
     "https://github.com/airblade/vim-gitgutter.git"
 dl_bundle "vim-javascript" \
