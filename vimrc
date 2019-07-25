@@ -20,8 +20,11 @@ set wildignore+=node_modules,vendor,.git,.cache,.DS_STORE
 syntax on
 filetype plugin indent on
 
-" insertmode by default
-"au BufRead,BufNewFile * start
+" set default filetype for c headers
+augroup project
+  autocmd!
+  autocmd BufRead,BufNewFile *.h set filetype=c
+augroup END
 
 " configure nerdtree
 autocmd StdinReadPre * let s:std_in = 1
