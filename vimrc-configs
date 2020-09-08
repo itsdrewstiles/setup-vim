@@ -1,6 +1,3 @@
-" init pathogen
-execute pathogen#infect()
-
 " some recommended configs
 set nocompatible
 set modifiable
@@ -20,6 +17,8 @@ set wildignore+=node_modules,vendor,.git,.cache,.DS_STORE
 syntax on
 filetype plugin indent on
 
+highlight ColorColumn ctermbg=8
+
 " set default filetype for c headers
 augroup project
   autocmd!
@@ -34,6 +33,7 @@ autocmd bufenter * if (winnr("$") == 1
   \ && exists("b:NERDTree")
   \ && b:NERDTree.isTabTree()) | q | endif
 
+let g:NERDTreeWinSize = 42
 let g:NERDTreeNodeDelimiter = "\u00a0"
 let g:NERDTreeAutoDeleteBuffer = 1
 let g:NERDTreeMinimalUI = 1
@@ -42,15 +42,15 @@ let g:NERDTreeShowHidden = 1
 let g:NERDTreeCascadeSingleChildDir = 0
 let g:NERDTreeRespectWildIgnore = 1
 let g:NERDTreeIndicatorMapCustom = {
-  \ "Modified"  : "modified",
-  \ "Staged"    : "staged",
-  \ "Untracked" : "untracked",
-  \ "Renamed"   : "renamed",
-  \ "Unmerged"  : "unmerged",
-  \ "Deleted"   : "deleted",
-  \ "Dirty"     : "dirty",
-  \ "Clean"     : "clean",
-  \ 'Ignored'   : 'ignored',
+  \ "Modified"  : "M",
+  \ "Staged"    : "S",
+  \ "Untracked" : "UT",
+  \ "Renamed"   : "R",
+  \ "Unmerged"  : "UM",
+  \ "Deleted"   : "-",
+  \ "Dirty"     : "D",
+  \ "Clean"     : "C",
+  \ "Ignored"   : "I",
   \ "Unknown"   : "?"
   \ }
 
@@ -68,9 +68,3 @@ let g:strip_whitespace_on_save = 1
 
 " configure localvimrc
 let g:localvimrc_ask = 0
-
-" configure delimitMate
-let g:delimitMate_expand_cr = 1
-
-" configure deoplete
-let g:deoplete#enable_at_startup = 1
