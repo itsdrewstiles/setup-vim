@@ -41,7 +41,7 @@ let g:NERDTreeDirArrows = 1
 let g:NERDTreeShowHidden = 1
 let g:NERDTreeCascadeSingleChildDir = 0
 let g:NERDTreeRespectWildIgnore = 1
-let g:NERDTreeIndicatorMapCustom = {
+let g:NERDTreeGitStatusIndicatorMapCustom = {
   \ "Modified"  : "M",
   \ "Staged"    : "S",
   \ "Untracked" : "UT",
