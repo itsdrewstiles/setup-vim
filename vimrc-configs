@@ -68,3 +68,6 @@ let g:strip_whitespace_on_save = 1
 
 " configure localvimrc
 let g:localvimrc_ask = 0
+
+" configure license & header
+let g:header_auto_add_header = 0
