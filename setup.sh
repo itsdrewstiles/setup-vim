@@ -10,38 +10,27 @@ type nvim >/dev/null 2>&1 \
         exit 1;
     }
 
-function link_nvim_configs() {
-    rm -rf "$1"
-    mkdir -p "$1"
-    ln -sf "$HOME/.vim/autoload" "$1/autoload"
-    ln -sf "$HOME/.vim/bundle" "$1/bundle"
-    ln -sf "$HOME/.vimrc" "$1/init.vim"
-}
+CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
+NVIM_CONFIG="$CONFIG_HOME/nvim/init.vim"
 
-# Some of these bundles require if_python3
+# Some bundles require if_python3
 pip install --user pynvim
 
 # Install vim-plug
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
-# Download the latest .vimrc plugins
-curl -LSso "$HOME/.vimrc" \
-    "https://raw.githubusercontent.com/itsdrewstiles/setup-vim/master/vimrc-plugins"
+rm -rf "$CONFIG_HOME/nvim"
+mkdir -p "$CONFIG_HOME/nvim"
+
+# Download the latest vim init plugins
+curl -LSso "$NVIM_CONFIG" \
+    "https://raw.githubusercontent.com/merajsahebdar/setup-vim/master/vimrc-plugins"
 
 # Install Plugins
-vim +PlugInstall +qall
+nvim +PlugInstall +qall
 
-# Download the latest .vimrc configurations
-echo -e "\n\n" > "$HOME/.vimrc"
+# Download the latest vim init configurations
+echo -e "" >> "$NVIM_CONFIG"
 curl -LSs \
-    "https://raw.githubusercontent.com/merajsahebdar/setup-vim/master/vimrc-configs" | tee -a "$HOME/.vimrc"
-
-# Link neovim configs to vim configs
-if [[ -n "${XDG_CONFIG_HOME+x}" ]]; then
-    link_nvim "$XDG_CONFIG_HOME/nvim"
-else
-    link_nvim_configs "$HOME/.config/nvim"
-fi
+    "https://raw.githubusercontent.com/merajsahebdar/setup-vim/master/vimrc-configs" | tee -a "$NVIM_CONFIG"
